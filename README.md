@@ -11,24 +11,41 @@ NV-UV is a **companion tool**, not a replacement for Afterburner. For overclocki
 
 ## Discover NV-UV Play
 
-**NV-UV Play** brings straightforward presets and advanced GPU tuning together in a standalone app. Set up automatic game profiles, fine-tune your voltage/frequency curve, use DCC and monitor performance with the built-in overlay. Play works without MSI Afterburner or RTSS and is currently in Alpha.
+**NV-UV Play** offers the same features as NV-UV, with a focus on ease of use, and works independently of MSI Afterburner. Easily create your own undervolting profiles, manage fan curves and assign profiles to your games. For monitoring, you can use RTSS alongside Play or choose Play's own overlay with all sensor readings available there.
 
-**[Explore Play (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html) · [Deutsch](https://christianp403-spec.github.io/NV-UV-Play/) · [Download Play](https://github.com/christianp403-spec/NV-UV-Play/releases)**
+Advanced users and experts can also explore **experimental expert settings** on supported GPUs, such as Crossbar (XBAR), SYS and video clocks, NVVDD/MSVDD voltage limits, Voltage Boost and more. Play is free and currently available as a prerelease.
 
-## NV-UV v0.99.6.0
+[Download NV-UV Play](https://github.com/christianp403-spec/NV-UV-Play/releases)
 
-This update reworks Hotspot and VRAM monitoring with independent PawnIO readings, guided migration and optional Afterburner/RTSS Hotspot support.
+More information: [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html)
 
-- Sensor migration preserves UV profiles and respects disabled displays. Missing optional sensor readings do not block UV features.
-- PawnIO is downloaded and installed when you apply enabled sensor options if it is missing. Internet access and Windows administrator approval are required.
-- The VRAM Hotspot display shows the highest individual temperature, with the sensor list available on click.
-- Improved Voltage Step Scanner monitoring and reporting of interrupted readings, single-instance handling and restoration from the system tray.
-- Improved DCC game detection for restricted game processes, including The Division 2, and cleanup after failed in-place file replacements.
-- The bundled Game Database **2.28** contains **699 entries**, including **CODE VEIN II** and **Valheim**.
+## NV-UV v0.99.6.1
 
-Thanks for your feedback, bug reports and diagnostic data!
+### Scanner and setup
 
-[Release notes and download](https://github.com/christianp403-spec/NV-UV/releases/tag/v0.99.6.0)
+- Afterburner setup now checks GPU usage monitoring for the assigned NVIDIA GPU, including systems where integrated graphics and an NVIDIA GPU are both present. GPU1/GPU2 refers to Afterburner's GPU and sensor assignment. **This change does not add SLI support.** It offers to enable missing sources, preserves existing selections and checks them again after applying. Previous setup confirmations are rechecked.
+- The Voltage Step Scanner distinguishes missing readings, idle, insufficient test load and stale data. Voltage and GPU usage are shown separately. Missing readings alone do not block UV profiles; unverified scan points remain unavailable for use.
+- Core and memory clock sources are recognized without a GPU prefix when the GPU assignment, units and readings match.
+
+### Fixes
+
+- Disabling UV-Pilot no longer requests a restore to 0 Hz when Smart Hz has not been used.
+- Improved error-dialog handling and reconnection for the NVML telemetry process. The previous process must be confirmed as stopped before reconnecting.
+- Power-limit restoration is only reported as successful after a successful driver call. A failed restore preserves the saved target and displays a warning.
+
+### New restriction after a restore failure
+
+**After a failed power-limit restore, further scans are blocked for the current session. Check or restore the power limit in Afterburner, then restart NV-UV before scanning again.**
+
+### Game database and signing
+
+- Game database 2.34 now contains **708 entries in total**, including Total War: WARHAMMER II with Balanced and corrected Space Marine 2 retail-process detection.
+- The NV-UV executable is digitally signed with a **Certum code-signing certificate and an RFC 3161 timestamp**.
+- VirusTotal reported **0/67 detections** for the signed release executable on **October 10, 2026**. [View scan report](https://www.virustotal.com/gui/file/4aa34838d2dda11f7efc566348754528bc29fdc3dee73cf82697d3ef7bf276d8).
+
+Thank you all for helping NV-UV grow! Your support, feedback, bug reports and diagnostic data help me keep improving the program.
+
+[Release notes and download](https://github.com/christianp403-spec/NV-UV/releases/tag/v0.99.6.1)
 
 > **Not to be confused with** [doums/nvuv](https://github.com/doums/nvuv), a separate CLI tool for NVIDIA undervolting on Linux written in Zig. Different platform, different scope, different project.
 
@@ -59,7 +76,7 @@ The latest build is available as a ZIP under [Releases](https://github.com/chris
 - **DCC: Dynamic Clock Clapping**: learns efficient clock caps for recognized games and remembers them per game and GPU
 - **NVIDIA Power Efficiency Mode**: optional experimental global NVIDIA efficiency mode
 - **NVIDIA Auto-UV**: previews an individual starting point and applies it only after confirmation
-- **UV-Pilot**: recognizes 699 games, automatically switches to the selected UV preset
+- **UV-Pilot**: recognizes 708 games, automatically switches to the selected UV preset
 - **Smart Hz**: desktop 60 Hz, gaming native Hz (experimental)
 - **Verified Updates**: manual installation, signed packages and rollback if installation fails
 - **Local Diagnostics**: creates a local ZIP first; optional private sending only after review and consent
