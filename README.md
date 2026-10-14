@@ -22,6 +22,7 @@ More information: [Website (English)](https://christianp403-spec.github.io/NV-UV
 ## NV-UV v0.99.6.3
 
 ### Bug fixes
+- Fixed cleanup of old update files.
 - Fixed an Afterburner connection failure caused by global monitoring sources being mistaken for a GPU.
 - Scanner and optimizer results now correctly retain crashes reported by the test process instead of labelling them only as unstable.
 - Improved DCC identification of games sharing an executable name, including Path of Exile and Path of Exile 2, using the full path and matching NVIDIA profile.
