@@ -29,7 +29,7 @@ More information: [Website (English)](https://christianp403-spec.github.io/NV-UV
 
 ### GPU information
 - Click the GPU name to open a compact hardware overview with detected GPU details, stock-curve information, power range and core voltage limit where available.
-- Added an ASIC-quality display for supported Blackwell GPUs, with the same explanation as Play. The value is informational and does not change presets or tune the scanner, Stabilizer or DCC.
+- Added an ASIC-quality display for supported Blackwell GPUs.
 - Improved driver-version display and aligned the larger manufacturer and model text across all five skins.
 
 ### Game database
