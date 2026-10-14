@@ -19,6 +19,31 @@ Advanced users and experts can also explore **experimental expert settings** on 
 
 More information: [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html)
 
+## NV-UV v0.99.6.3
+
+### Bug fixes
+- Fixed an Afterburner connection failure caused by global monitoring sources being mistaken for a GPU.
+- Scanner and optimizer results now correctly retain crashes reported by the test process instead of labelling them only as unstable.
+- Improved DCC identification of games sharing an executable name, including Path of Exile and Path of Exile 2, using the full path and matching NVIDIA profile.
+- Added a confirmed DCC recovery option when a changed driver environment or supported-clock list blocks startup recovery. GPU identity and ownership checks remain required. After successful recovery, restart NV-UV before making further GPU changes.
+
+### GPU information
+- Click the GPU name to open a compact hardware overview with detected GPU details, stock-curve information, power range and core voltage limit where available.
+- Added an ASIC-quality display for supported Blackwell GPUs, with the same explanation as Play. The value is informational and does not change presets or tune the scanner, Stabilizer or DCC.
+- Improved driver-version display and aligned the larger manufacturer and model text across all five skins.
+
+### Game database
+- Bundled game database 2.37 with 731 entries, including the 20 recently requested games and mods. This database update is also already available through the shared library update in NV-UV and Play.
+
+### Try NV-UV Play
+- Looking for undervolting without MSI Afterburner? NV-UV Play is the standalone alternative with profiles, a curve editor, a scanner and a built-in overlay.
+
+More information: [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html).
+
+Thank you for your feedback, bug reports and diagnostic data!
+
+[Release notes and download](https://github.com/christianp403-spec/NV-UV/releases/tag/v0.99.6.3)
+
 ## NV-UV v0.99.6.2
 
 ### Hotfix
