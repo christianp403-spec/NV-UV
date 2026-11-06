@@ -1,7 +1,4 @@
 # NV-UV
-
-> **Manual update required:** When updating from v0.99.6.3 or earlier, download the [v0.99.6.4 portable ZIP](https://github.com/christianp403-spec/NV-UV/releases/tag/v0.99.6.4) and start it from a new folder. Existing profiles and settings are retained.
-
 **GPU Undervolt Companion Tool for NVIDIA RTX 30 (Ampere), RTX 40 (Ada Lovelace) and RTX 50 (Blackwell)**
 
 NV-UV simplifies GPU undervolting by working alongside MSI Afterburner. It combines one-click presets, automatic game detection, crash recovery, a built-in DX12+DXR stress-test scanner and optional clock-efficiency control for games.
@@ -22,51 +19,6 @@ Advanced users and experts can also explore **experimental expert settings** on 
 
 More information: [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html)
 
-## NV-UV v0.99.6.4
-
-### Manual update required
-
-- This release uses a new update signing key. When updating from v0.99.6.3 or earlier, close NV-UV, download the portable ZIP from GitHub, extract it into a new folder and start NV-UV.exe. Existing profiles and settings are retained.
-
-### Scanner
-
-- Fixed selection of a reachable starting clock using the GPU's current offset limits.
-- Fixed leftover offsets when moving to a higher voltage point.
-- Preserved saved Afterburner profiles and the selected slot during scanning. The original VRAM offset is restored after cancellation or failure.
-
-### Profiles and Stabilizer
-
-- GPU offset controls now use the range reported by the driver. Saved values outside the current slider range are preserved.
-- Stabilizer saves new learned values only after they have been applied successfully and handles crash reports more reliably.
-
-### DCC
-
-- Improved foreground-game detection and compatibility with older DirectX games.
-- Short monitoring delays no longer discard confirmed learning time.
-
-### Diagnostics
-
-- A freshly created diagnostic package can be submitted directly from the report dialog after review and consent.
-
-### Game database
-
-- Bundled game database 2.47 with 749 entries.
-
-### Try NV-UV Play
-
-Looking for undervolting without MSI Afterburner? **NV-UV Play** brings together your own profiles, a voltage/frequency curve editor, automatic game detection and a customizable monitoring overlay. It is free and available as an Alpha prerelease.
-
-[Explore NV-UV Play](https://christianp403-spec.github.io/NV-UV-Play/en.html) | [Download on GitHub](https://github.com/christianp403-spec/NV-UV-Play/releases)
-
-### Feedback
-
-- If a problem persists, please submit fresh diagnostic data from this version.
-More information: [Website (English)](https://christianp403-spec.github.io/NV-UV-Play/en.html)
-
-Thank you for your feedback, bug reports and diagnostic data!
-
-[Release notes and download](https://github.com/christianp403-spec/NV-UV/releases/tag/v0.99.6.4)
-
 ## NV-UV v0.99.6.3
 
 ### Bug fixes
